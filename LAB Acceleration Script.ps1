@@ -53,7 +53,7 @@ Do {
 			0  =  Exit
 
             "
-            [int]$choice1 = read-host -prompt "Select number & press enter"
+            [int]$choice1 = read-host -prompt "Select a feature number & press enter"
             } until ( ($choice1 -ge 0) -and ($choice1 -le 10))
 
         Switch ($choice1) {
@@ -88,10 +88,10 @@ Do {
                                 Install-ADDSForest `
                                 -CreateDnsDelegation:$false `
                                 -DatabasePath "C:\Windows\NTDS" `
-                                -DomainMode "Win2012" `
+                                -DomainMode "Win2019" `
                                 -DomainName "contoso.com" `
                                 -DomainNetbiosName "CONTOSO" `
-                                -ForestMode "Win2012" `
+                                -ForestMode "Win2019" `
                                 -InstallDns:$true `
                                 -LogPath "C:\Windows\NTDS" `
                                 -NoRebootOnCompletion:$false `
